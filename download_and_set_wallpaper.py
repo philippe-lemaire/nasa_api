@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 def main():
     load_dotenv()  # take environment variables from .env.
 
-    day = pendulum.yesterday(tz="Europe/Paris").date().isoformat()
+    day = pendulum.today(tz="Europe/Paris").date().isoformat()
 
     KEY = os.getenv("KEY")
 
