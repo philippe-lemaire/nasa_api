@@ -1,3 +1,5 @@
 jupyterlab
 requests
-
+python-dotenv
+black
+pendulum
