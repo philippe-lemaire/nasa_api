@@ -34,9 +34,11 @@ def main():
                 filename = filename[next_slash + 1 :]
             file_path = dir_name + filename
             os.system(f"feh --bg-scale {file_path}")
-            print("Wallpaper set.")
+            print(
+                f"Day: {day}: {data.get('title')}.\nExplanation: {data.get('explanation')}.\nWallpaper downloaded."
+            )
         else:
-            print(f"Today's Pic of the day is a {data.get('media_type')}.")
+            print(f"Day: {day}. Today's Pic of the day is a {data.get('media_type')}.")
 
 
 if __name__ == "__main__":
