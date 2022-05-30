@@ -41,7 +41,7 @@ def main():
             
             os.system(wallpaper_set_cmd)
             print(
-                f"Day: {day}: {data.get('title')}.\nExplanation: {data.get('explanation')}.\nWallpaper downloaded."
+                f"Day: {day}: {data.get('title')}.\nExplanation: {data.get('explanation')}.\nWallpaper downloaded and set."
             )
         else:
             print(f"Day: {day}. Today's Pic of the day is a {data.get('media_type')}.")
