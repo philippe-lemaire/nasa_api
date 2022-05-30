@@ -26,14 +26,19 @@ def main():
             os.makedirs(dir_name, exist_ok=True)
             dl_command = f"wget -cq {url} --directory-prefix={dir_name}"
             os.system(dl_command)
-            # set the wallpaper with gsetting
+            # set the wallpaper 
 
             filename = url
             while "/" in filename:
                 next_slash = filename.index("/")
                 filename = filename[next_slash + 1 :]
             file_path = dir_name + filename
-            wallpaper_set_cmd = f"gsettings set org.gnome.desktop.background picture-uri file:///{file_path}"
+            # for gnome through gsettings
+            #wallpaper_set_cmd = f"gsettings set org.gnome.desktop.background picture-uri file:///{file_path}"
+            
+            # with feh
+            wallpaper_set_cmd = f"feh --bg-scale {file_path}"
+            
             os.system(wallpaper_set_cmd)
             print(
                 f"Day: {day}: {data.get('title')}.\nExplanation: {data.get('explanation')}.\nWallpaper downloaded."
