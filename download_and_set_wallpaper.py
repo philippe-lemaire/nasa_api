@@ -34,10 +34,10 @@ def main():
                 filename = filename[next_slash + 1 :]
             file_path = dir_name + filename
             # for gnome through gsettings
-            #wallpaper_set_cmd = f"gsettings set org.gnome.desktop.background picture-uri file:///{file_path}"
+            wallpaper_set_cmd = f"gsettings set org.gnome.desktop.background picture-uri file:///{file_path}"
             
             # with feh
-            wallpaper_set_cmd = f"feh --bg-scale {file_path}"
+            #wallpaper_set_cmd = f"feh --bg-scale {file_path}"
             
             os.system(wallpaper_set_cmd)
             print(
