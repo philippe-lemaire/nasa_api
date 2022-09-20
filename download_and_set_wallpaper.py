@@ -33,11 +33,14 @@ def main():
                 next_slash = filename.index("/")
                 filename = filename[next_slash + 1 :]
             file_path = dir_name + filename
+            # rename file to insert date at the beginning
+            new_file_path = f"{dir_name}/{day}_{filename}"
+            os.rename(file_path, new_file_path)
             # for gnome through gsettings
-            wallpaper_set_cmd = f"gsettings set org.gnome.desktop.background picture-uri file:///{file_path}"
+            # wallpaper_set_cmd = f"gsettings set org.gnome.desktop.background picture-uri file:///{new_file_path}"
 
             # with feh
-            # wallpaper_set_cmd = f"feh --bg-scale {file_path}"
+            wallpaper_set_cmd = f"feh --bg-scale {new_file_path}"
 
             os.system(wallpaper_set_cmd)
             print(
